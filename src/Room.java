@@ -12,13 +12,35 @@
  * @author  Michael Kölling and David J. Barnes
  * @version 2011.07.31
  */
+import java.util.HashMap;
 public class Room 
 {
+    
     public String description;
-    public Room northExit;
-    public Room southExit;
-    public Room eastExit;
-    public Room westExit;
+    private Room northExit;
+    private Room southExit;
+    private Room eastExit;
+    private Room westExit;
+    
+    
+    
+    
+    public Room getExit(String direction)
+{
+    if(direction.equals("north")) {
+        return northExit;
+     }
+    if(direction.equals("east")) {
+        return eastExit;
+}
+    if(direction.equals("south")) {
+        return southExit;
+}
+    if(direction.equals("west")) {
+        return westExit;
+}
+        return null;
+}
 
     /**
      * Create a room described "description". Initially, it has
